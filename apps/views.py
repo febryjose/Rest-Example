@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
@@ -23,6 +24,12 @@ class DummyViewSet(viewsets.ViewSet):
     """
     A simple ViewSet for return a dummy dict response.
     """
+    
+
     def list(self, request):
         dummy = {'key1':'value1','key2':'value2'}
         return Response(dummy)
+
+    def post(self, request):
+        print 'in post'
+        return Response({'success':True})
